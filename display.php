@@ -8,30 +8,29 @@ include 'connect.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="display.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-xxxxxx" crossorigin="anonymous">
-<script src="https://pro.fontawesome.com/releases/v5.15.3/js/all.js" integrity="sha384-xxxxxx" crossorigin="anonymous"></script>
+    <script src="https://pro.fontawesome.com/releases/v5.15.3/js/all.js" integrity="sha384-xxxxxx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="display.css">
 
     <title>Crud Operation</title>
 </head>
 <body>
     <div class="subcontainer">
-        <nav>
-            <div class="nav"><h1>User Managment system</h1></div>
-        </nav>
- 
-  <table>
-<tr>
-    <th>#</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Email</th>
-    <th>Password</th>
-    <th>Gender</th>
-    <th>Action</th>
-</tr>
+    <nav>
+        <div class="nav"><h1>User Managment System</h1></div>
+    </nav>
+    <table>
+    <tr>
+        <th>Id</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Gender</th>
+        <th>Action</th>
+    </tr>
 
 <?php
 $sql = "SELECT * FROM users";
@@ -44,7 +43,7 @@ if($result== true){
         $first_name=$row['fname'];
         $last_name = $row['lname'];
         $email = $row['email'];
-        $password = $row['password'];
+        $password = md5($row['password']);
         $gender = $row['gender'];
         echo "
         <tr>
@@ -64,15 +63,14 @@ if($result== true){
     echo 'No data found';
 } 
 
-?>
-       
+?>    
 </tr>
   </table>
   <div class="user">
-  <a href="user.php"><?php echo '<i class="fas fa-user-secret"></i>'; ?>New User</a><i class="fa-solid fa-user-secret"></i></a>
-  <a href="pdf.php">Export to PDF <?php echo '<i class="fas fa-book"></i>';?></a>
+  <a href="user.php"><b>Add</b><?php echo ' <i class="fas fa-user-secret"></i>';?></a><?php echo '&bnsp'?>
+  <a href="pdf.php"><b>Export</b><?php echo ' <i class="fas fa-book"></i>';?></a>
   </div>
 
-    </div>
+</div>
 </body>
 </html>

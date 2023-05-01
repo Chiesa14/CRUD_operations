@@ -18,9 +18,8 @@ if(isset($_POST['submit'])){
     
     $sql = "UPDATE users set id=$id , fname='$first_name',lname = '$last_name',email='$email',password ='$password',gender = '$gender'  where id=$id";
     $result = mysqli_query($conn,$sql);
-    if($result == true){
-        // echo "Updated successfully!!!"; 
-        header('location:display.php');//
+    if($result == true){ 
+        header('location:display.php');
     }else{
         echo 'Error:',$sql.'<br>'.$conn -> error;
     }
@@ -57,13 +56,13 @@ if(isset($_POST['submit'])){
   <form action="update.php?updateid=<?php echo $id; ?>" method="POST">
     <div class="your-input">
       First name: <br />
-      <input type="text" name="fname" id="fname" class="input" placeholder="Enter your First name" value=<?php echo $first_name; ?>   /><br />
+      <input type="text" name="fname" id="fname" class="input" placeholder="Enter your First name" value=<?php echo $first_name; ?>/><br />
       Last name: <br />
-      <input type="text" name="lname" id="lname" class="input" placeholder="Enter your Last name" value=<?php echo $last_name ?>   /><br />
+      <input type="text" name="lname" id="lname" class="input" placeholder="Enter your Last name" value=<?php echo $last_name ?>/><br />
       Email: <br />
       <input type="text" name="email" id="email" class="input" placeholder="Enter your email" value=<?php echo $email ?>/><br />
       PASSWORD: <br />
-      <input type="password" name="pwd" id="pwd"  class="input" placeholder="Enter your password" value=<?php echo $password; ?>    /><br />
+      <input type="text" name="pwd" id="pwd"  class="input" placeholder="Enter your password" value=<?php echo $password; ?>/><br />
       GENDER: <br />
       <div class="gender">
         <input type="radio" name="gender" value="Male" <?php if($gender == 'Male') {echo "checked";}?>/>Male<br />

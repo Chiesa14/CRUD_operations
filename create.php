@@ -4,7 +4,7 @@ if(isset($_POST['submit'])){
     $first_name = $_POST['fname'];
     $last_name =$_POST['lname'];
     $email =$_POST['email'];
-    $password =$_POST['pwd'];
+    $password = $_POST['pwd'];
     $gender = $_POST['gender'];
     
     $sql = "INSERT INTO USERS(fname,lname,email,password,gender) VALUES ('$first_name','$last_name','$email','$password','$gender')";

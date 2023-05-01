@@ -16,7 +16,7 @@ body{
     width: 40vw;
     /* margin-bottom: 20em; */
     border-radius: 10px;
-    height: 85vh;
+    height: 86vh;
     /* justify-content: center; */
     /* display: flex; */
     padding: 0em 2em 2em 2em;
@@ -71,7 +71,7 @@ input[type='radio']{
     height: 3em;
     padding: 0.5em;
     border-radius: 6px;
-    border: 2px solid dodgerblue;
+    border: 2px solid gray;
     background: white;
 }
 .your-input{
@@ -79,21 +79,6 @@ input[type='radio']{
     flex-direction: column;
     gap: 0.3em;
     padding: 1em 0 0 0;
-}
-.your-input input label{
-    font-size: 1.1rem;
-    color: grey;
-    transition: .2s;
-}
-.input input:focus ~ label,
-.input input:valid ~ label{
-    top: 10%;
-    font-size: 8rem;
-    color: black;
-}
-input input:focus{
-    border-width: 2px;
-    border-color: blue;
 }
 .forgot-password-link {
     font-size: x-small;
@@ -133,7 +118,8 @@ input input:focus{
     text-align: center;
     justify-content: center;
     margin: 1em 0;
-    background-color: blue;
+    background-color: rgb(24, 121, 211);
+    border-radius: 5px;
     outline: none;
     border: none;
     color: white;

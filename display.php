@@ -68,7 +68,9 @@ if($result== true){
   </table>
   <div class="user">
   <a href="user.php"><b>Add</b><?php echo ' <i class="fas fa-user-secret"></i>';?></a><?php echo '&bnsp'?>
-  <a href="pdf.php"><b>Export</b><?php echo ' <i class="fas fa-book"></i>';?></a>
+  <form action="download.php" method="post">
+    <input type="submit" id="download" name="download" value="download">
+  </form>
   </div>
 
 </div>

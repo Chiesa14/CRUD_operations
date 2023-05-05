@@ -10,7 +10,6 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO USERS(fname,lname,email,password,gender) VALUES ('$first_name','$last_name','$email','$password','$gender')";
     $result = $conn->query($sql);
     if($result == true){
-        // echo "Data inserted successfully!!!"; 
         header('location:display.php');
     }else{
         echo 'Error:',$sql.'<br>'.$conn -> error;
@@ -18,8 +17,4 @@ if(isset($_POST['submit'])){
     $conn->close();
 
 }
-
-
-
-
 ?>
